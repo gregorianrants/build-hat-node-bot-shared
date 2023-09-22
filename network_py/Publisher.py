@@ -29,6 +29,7 @@ class Publisher:
         # print(message)
         self.publicationAddress = message["data"]["fullAddress"]
         self.socket = self.context.socket(zmq.PUB)
+        print(f"subscribing to {self.publicationAddress}")
         self.socket.bind(self.publicationAddress)
 
     def send_json(self, py_dict):
